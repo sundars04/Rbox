@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
-    @recipes = Recipe.all.order("created_at DESC")
+    @recipe = Recipe.all.order("created_at DESC")
   end
 
   def show   
@@ -47,6 +47,6 @@ class RecipesController < ApplicationController
     end
 
     def recipe_params
-      params.require(:recipe).permit(:title, :description)
+      params.require(:recipe).permit(:title, :description, :image)
     end
 end
