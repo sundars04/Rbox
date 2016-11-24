@@ -1,0 +1,8 @@
+%h1= @recipe.title
+%p= simple_format(@recipe.description)
+%p
+  = @recipe.created_at.to_time.strftime('%B %e at %l:%M %p')
+
+= link_to "Back", root_path, class: "btn btn-default"
+= link_to "Edit", edit_recipe_path, class: "btn btn-info"
+= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-warning"
