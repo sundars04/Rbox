@@ -1,0 +1,28 @@
+!!! 5
+%html
+%head
+  %title Recipe Box
+  = csrf_meta_tags
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %link{:href => "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700", :rel => "stylesheet"}/
+
+%body
+  %nav.navbar.navbar-default
+    .container
+      .navbar-brand= link_to "Recipe Box", root_path      
+      %ul.nav.navbar-nav.navbar-right
+        %li= link_to "New Recipe", new_recipe_path
+        %li= link_to "Sign Out", "#", method: :delete
+    
+      %ul.nav.navbar-nav.navbar-right
+        %li= link_to "Sign Up", "#"
+        %li= link_to "Sign In", "#"
+  
+.container  
+  - flash.each do |type, msg|
+    %div{:class => "alert alert-#{type == :notice ? "success" : type} fadeout", "data-dismiss" => "alert"}
+      %button.close &times;
+      = msg if msg.is_a?(String)
+      
+  = yield

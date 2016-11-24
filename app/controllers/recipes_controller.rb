@@ -15,7 +15,8 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      redirect_to @recipe, notice: "Successfully created new recipe"
+      flash[:success] = "Successfully created new recipe"
+      redirect_to @recipe 
     else
       render 'new'
     end
@@ -26,7 +27,8 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
-      redirect_to @recipe, notice: "Successfully updated recipe"
+      flash[:success] = "Successfully updated recipe"
+      redirect_to @recipe 
     else
       render 'edit'
     end
@@ -34,7 +36,8 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-    redirect_to root_path, alert: "Successfully deleted recipe"
+    flash[:danger] = "Successfully deleted recipe"
+    redirect_to root_path
   end
 
   private
