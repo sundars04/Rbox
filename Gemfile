@@ -14,6 +14,7 @@ gem 'haml'
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'paperclip'
+gem 'cocoon', '~> 1.2', '>= 1.2.9'
 
 group :development, :test do
   gem 'byebug', platform: :mri
