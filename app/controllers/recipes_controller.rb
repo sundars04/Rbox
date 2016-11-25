@@ -8,7 +8,9 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @new_comment = Comment.build_from(@recipe, current_user.id, "")
+    
+      @new_comment = Comment.build_from(@recipe, current_user, "")
+    
   end
 
   def new
