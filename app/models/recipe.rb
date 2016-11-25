@@ -19,5 +19,6 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :directions,
                                 reject_if: proc { |attributes| attributes['step'].blank? },
                                 allow_destroy: true
+  acts_as_commentable                                
 
 end

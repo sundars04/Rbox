@@ -7,7 +7,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.all.order("created_at DESC")
   end
 
-  def show   
+  def show
+    @new_comment = Comment.build_from(@recipe, current_user.id, "")
   end
 
   def new

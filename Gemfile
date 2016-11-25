@@ -17,6 +17,7 @@ gem 'paperclip'
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'devise'
 gem 'devise-bootstrapped', '~> 0.1.1'
+gem 'acts_as_commentable_with_threading'
 
 group :development, :test do
   gem 'byebug', platform: :mri
