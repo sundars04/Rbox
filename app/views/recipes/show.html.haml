@@ -7,8 +7,8 @@
         %h1= @recipe.title
         %p.description= simple_format(@recipe.description)
         %p
-          Submitted on
-          = @recipe.created_at.to_time.strftime('%B %e at %l:%M %p')
+          Submitted by
+          = @recipe.user.email + " on " + @recipe.created_at.to_time.strftime('%B %e at %l:%M %p')
   .row
     .col-md-6
       #ingredients
@@ -25,6 +25,7 @@
 
   .row
     .col-md-12
-      = link_to "Back", root_path, class: "btn btn-sm btn-default"      
-      = link_to "Edit", edit_recipe_path, class: "btn btn-sm btn-info"
-      = link_to "Delete", recipe_path, method: :delete, data: { confirm: "Are You Sure?" }, class: "btn btn-sm btn-warning"
+      = link_to "Back", root_path, class: "btn btn-sm btn-default"
+      - if user_signed_in? && (current_user == @recipe.user)
+        = link_to "Edit", edit_recipe_path, class: "btn btn-sm btn-info"
+        = link_to "Delete", recipe_path, method: :delete, data: { confirm: "Are You Sure?" }, class: "btn btn-sm btn-warning"

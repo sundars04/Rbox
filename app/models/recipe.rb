@@ -1,7 +1,8 @@
 class Recipe < ApplicationRecord
 
-  has_many :ingredients
-  has_many :directions
+  has_many :ingredients, inverse_of: :recipe
+  has_many :directions, inverse_of: :recipe
+  belongs_to :user
 
   scope :sorted, -> {order("created_at DESC")}
 
