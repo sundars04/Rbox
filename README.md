@@ -1,24 +1,17 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Recipe website built using RoR.
+Users can login, View, create, update and delete recipes(CRUD), users can also comment in a threaded patter using acts_as_commentable_with_threading gem.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 2.3.0
 
-* System dependencies
+* Rails version - 5.0.0.1
 
-* Configuration
+* Additional gems used - haml, simple_form, bootstrap-sass, devise, devise-bootstrapped(for login, update and signup)
+	paperclip(image upload), cocoon(nested forms), acts_as_commentable_with_threading(for comments) and aws-sdk(for heroku)
 
-* Database creation
+* Database - pg for production
 
-* Database initialization
+* Deployment instructions - git clone, bundle install --without production, rails db:migrate and rails s
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Deployment instructions for Heroku - you will need to add aws config settings in heroku(bucket, region, access and secret key).
