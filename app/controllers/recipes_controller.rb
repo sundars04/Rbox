@@ -8,9 +8,11 @@ class RecipesController < ApplicationController
   end
 
   def show
-    
-      @new_comment = Comment.build_from(@recipe, current_user, "")
-    
+    if signed_in?
+      @new_comment = Comment.build_from(@recipe, current_user.id, "")
+    else
+      @all_comments = @recipe.comment_threads
+    end    
   end
 
   def new

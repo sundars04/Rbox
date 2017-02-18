@@ -6,7 +6,7 @@
       #recipe_info
         %h1= @recipe.title
         %p.description= simple_format(@recipe.description)
-        %p
+        %p.meta
           Submitted by
           = @recipe.user.email + " on " + @recipe.created_at.to_time.strftime('%B %e at %l:%M %p')
   .row

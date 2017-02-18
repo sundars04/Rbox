@@ -71,12 +71,12 @@ body {
   }
   img {
     width: 100%;
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
+    -webkit-transition: all 1.0s ease-out;
+    -moz-transition: all 1.0s ease-out;
+    -o-transition: all 1.0s ease-out;
+    transition: all 1.0s ease-out;
     &:hover {
-      transform: scale(1.075);
+      transform: scale(1.25);
     }
   }
   h2 {
@@ -118,6 +118,10 @@ body {
   .description {
     color: #8A8A8A;
     font-size: 20px;
+  }
+  .meta {
+    opacity: 0.5;
+    font-style: italic;
   }
 }
 
